@@ -183,4 +183,4 @@ All operations are logged to both console and daily log files:
 2025-10-29 10:30:46 - WikipediaClient - DEBUG - Raw Wikipedia response: {...}
 ```
 
-This allows you to trace exactly what data was sent and received, making it easy to identify where false information might have originated.
+This allows tracing exactly what data was sent and received, making it easy to identify where false information might have originated.
