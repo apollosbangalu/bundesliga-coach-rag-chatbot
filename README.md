@@ -82,7 +82,7 @@ pip install pipenv
 
 ```bash
 git clone <repository-url>
-cd bundesliga-coach-rag
+cd bundesliga-coach-rag-chatbot
 ```
 
 #### Step 3: Install Dependencies
@@ -215,6 +215,7 @@ The system supports various colloquial question formats:
 bundesliga-coach-rag-chatbot/
 ├── README.md
 ├── TROUBLESHOOTING.md
+├── SETUP_GUIDE.md      
 ├── requirements.txt           # For pip/venv
 ├── Pipfile                    # For pipenv
 ├── .gitignore

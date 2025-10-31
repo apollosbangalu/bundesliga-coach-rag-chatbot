@@ -1,4 +1,4 @@
-# Setup Guide - Bundesliga Coach RAG System
+# Setup Guide - Context Retrieval Script for Germany's 1. Bundesliga Coach RAG-Chatbot
 
 This guide provides detailed setup instructions for both **venv** and **pipenv** workflows.
 
