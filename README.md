@@ -1,6 +1,6 @@
 # Context Retrieval Script for Germany's 1. Bundesliga Coach RAG-Chatbot
 
-This is a Python application for information retrieval in a RAG (Retrieval-Augmented Generation) chatbot about football club coaches in Germany's 1. Bundesliga. This is a coding challenge developed by PANTOPIX. The coding challenge document "Coding Challenge - KE.pdf" is in the repository folder "coding challenge document". [**Coding Challenge - KE.pdf**](./coding%20challenge%20document/Coding%20Challenge%20-%20KE.pdf)
+This is a Python application for information retrieval in a RAG (Retrieval-Augmented Generation) chatbot about football club coaches in Germany's 1. Bundesliga. This is a coding challenge developed by PANTOPIX. The coding challenge document [**Coding Challenge - KE.pdf**](./coding%20challenge%20document/Coding%20Challenge%20-%20KE.pdf) is in the repository folder "coding challenge document".
 
 ## Overview
 
@@ -692,4 +692,4 @@ This project as part of a coding challenge developed by Pantopix.
 
 ## Contact
 
-For questions or issues, please refer to the coding challenge document "Coding Challenge - KE.pdf" in the repository in the folder "coding challenge document".
+For questions or issues, please refer to the coding challenge document [**Coding Challenge - KE.pdf**](./coding%20challenge%20document/Coding%20Challenge%20-%20KE.pdf) in the repository in the folder "coding challenge document".
