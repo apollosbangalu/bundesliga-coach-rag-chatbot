@@ -110,8 +110,14 @@ python main.py
 
 If you experience issues with the Wikipedia API (403 Forbidden errors), you can optionally install the `wikipedia-api` library:
 
+**Using venv:**
 ```bash
 pip install wikipedia-api
+```
+
+**Using pipenv:**
+```bash
+pipenv install wikipedia-api
 ```
 
 Then use the alternative implementation by modifying `main.py`:
@@ -121,6 +127,21 @@ from src.wikipedia_client import WikipediaClient
 # To this:
 from src.wikipedia_client_alternative import WikipediaClient
 ```
+
+### Choosing Between venv and pipenv
+
+| Feature | venv | pipenv |
+|---------|------|--------|
+| **Setup** | Built into Python 3.3+ | Requires separate installation |
+| **Dependency Management** | Manual (requirements.txt) | Automatic (Pipfile + Pipfile.lock) |
+| **Dependency Resolution** | Basic | Advanced with conflict detection |
+| **Security** | Manual checking | Automatic vulnerability scanning |
+| **Lock File** | No | Yes (Pipfile.lock) |
+| **Best For** | Simple projects, standard workflow | Team projects, production deployments |
+
+**Recommendation**: 
+- Use **venv** if you prefer standard Python tools and simple setup
+- Use **pipenv** if you want better dependency management and are working in a team environment
 
 ## Troubleshooting
 
@@ -191,13 +212,14 @@ The system supports various colloquial question formats:
 ### Project Structure
 
 ```
-bundesliga-coach-rag/
+bundesliga-coach-rag-chatbot/
 ├── README.md
 ├── TROUBLESHOOTING.md
-├── requirements.txt
+├── requirements.txt           # For pip/venv
+├── Pipfile                    # For pipenv
 ├── .gitignore
 ├── main.py
-├── logs/                          # Auto-created on first run
+├── logs/                      # Auto-created on first run
 │   └── bundesliga_rag_YYYYMMDD.log
 └── src/
     ├── __init__.py
