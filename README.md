@@ -1,4 +1,4 @@
-# Bundesliga Coach RAG System
+# Context Retrieval Script for Germany's 1. Bundesliga Coach RAG-Chatbot
 
 A Python script for information retrieval in a RAG (Retrieval-Augmented Generation) chatbot about football club coaches in Germany's 1. Bundesliga. This is a coding challenge developed by PANTOPIX. The coding challenge document "Coding Challenge - KE.pdf" is in the repository folder "coding challenge document"
 
