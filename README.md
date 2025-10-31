@@ -18,7 +18,7 @@ This system retrieves up-to-date information about Germany's 1. Bundesliga footb
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd bundesliga-coach-rag
+cd bundesliga-coach-rag-chatbot
 
 # Using pipenv (recommended)
 pipenv install
@@ -41,7 +41,7 @@ There are two ways to set up the project: using **venv** (standard) or **pipenv*
 
 ```bash
 git clone <repository-url>
-cd bundesliga-coach-rag
+cd bundesliga-coach-rag-chatbot
 ```
 
 #### Step 2: Create Virtual Environment
