@@ -17,7 +17,7 @@ This system retrieves up-to-date information about Germany's 1. Bundesliga footb
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone <https://github.com/apollosbangalu/bundesliga-coach-rag-chatbot>
 cd bundesliga-coach-rag-chatbot
 
 # Using pipenv (recommended)
@@ -40,7 +40,7 @@ There are two ways to set up the project: using **venv** (standard) or **pipenv*
 #### Step 1: Clone the Repository
 
 ```bash
-git clone <repository-url>
+git clone <https://github.com/apollosbangalu/bundesliga-coach-rag-chatbot>
 cd bundesliga-coach-rag-chatbot
 ```
 
@@ -81,7 +81,7 @@ pip install pipenv
 #### Step 2: Clone the Repository
 
 ```bash
-git clone <repository-url>
+git clone <https://github.com/apollosbangalu/bundesliga-coach-rag-chatbot>
 cd bundesliga-coach-rag-chatbot
 ```
 
@@ -178,7 +178,6 @@ Your question: Who is coaching Berlin?
 =============================================================
 GENERATED LLM PROMPT:
 =============================================================
-SYSTEM PROMPT:
 SYSTEM PROMPT:
 You are a helpful assistant an expert in Germany`s 1. Bundesliga football (soccer).
 You answer questions about coaches of clubs in Germany's 1. Bundesliga.

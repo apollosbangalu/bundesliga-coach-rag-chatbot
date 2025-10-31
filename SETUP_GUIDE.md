@@ -27,7 +27,7 @@ Should output: `Python 3.8.x` or higher
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone <https://github.com/apollosbangalu/bundesliga-coach-rag-chatbot>
    cd bundesliga-coach-rag-chatbot
    ```
 
@@ -105,7 +105,7 @@ Should output: `Python 3.8.x` or higher
 
 2. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone <https://github.com/apollosbangalu/bundesliga-coach-rag-chatbot>
    cd bundesliga-coach-rag-chatbot
    ```
 
