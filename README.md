@@ -422,7 +422,7 @@ A hybrid approach using caching would be ideal:
 
 For this challenge, querying on every request was required for coach data, demonstrating real-time retrieval capability.
 
-### 3. Process Change if Coach Information Only Available via PDF (still without LLM api, embeddings)
+### 3. Process Change if Coach Information Only Available via PDF (still without LLM)
 
 **Required Changes:**
 
