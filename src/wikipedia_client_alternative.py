@@ -65,7 +65,7 @@ class WikipediaClient:
         # Initialize Wikipedia API client
         # Based on the wikipedia-api documentation: user_agent format should be 'ProjectName (contact@example.com)'
         self.wiki = wikipediaapi.Wikipedia(
-            user_agent='BundesligaCoachRAGChatbot/1.0 (https://github.com/user/bundesliga-coach-rag-chatbot)',
+            user_agent='BundesligaCoachRAGChatbot/1.0 (https://github.com/apollosbangalu/bundesliga-coach-rag-chatbot)',
             language='en'
         )
         

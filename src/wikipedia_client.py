@@ -72,7 +72,7 @@ class WikipediaClient:
         # The required User-Agent header by Wikipedia API
         # Format: Application/Version (Contact Information)
         headers = {
-            "User-Agent": "BundesligaCoachRAGChatbot/1.0 (https://github.com/user/bundesliga-coach-rag-chatbot; contact@example.com)"
+            "User-Agent": "BundesligaCoachRAGChatbot/1.0 (https://github.com/apollosbangalu/bundesliga-coach-rag-chatbot; abangalu@gmail.com)"
         }
         
         self.logger.debug(f"Wikipedia API request params: {params}")
