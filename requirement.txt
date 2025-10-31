@@ -1,0 +1,3 @@
+SPARQLWrapper
+requests
+wikipedia-api
