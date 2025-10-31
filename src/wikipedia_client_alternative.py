@@ -3,7 +3,7 @@ This is an alternative approach for the Wikipedia API Client Module.
 I realised that sometimes the direct Wikipedia API fails.
 
 This alternative implementation uses the wikipedia-api package from python library.
-To use this version you must do the following steps:
+To use this version you must do the following steps minimal changes:
 1. Install: pip install wikipedia-api (or use pipenv)
 2. Replace the import statement in main.py:
    
