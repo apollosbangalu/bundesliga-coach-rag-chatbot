@@ -104,19 +104,60 @@ class BundesligaCoachRAGChatbot:
             self.logger.error("The Clubs and City cache is not initialized")
             return None
         
-        self.logger.info(f"Finding club for city identifier: {city_identifier}")
+        self.logger.info(f"Finding club for city identifier: '{city_identifier}'")
+        self.logger.debug(f"Available clubs in cache: {[club['club_name'] for club in self.clubs_cache]}")
         
-        # The special case: "pauli" -> FC St. Pauli
+        # SPECIAL CASE 1: "pauli" -> FC St. Pauli
         # Assumption based on challenge document: "you can assume for FC St. Pauli that the user will ask for 'Pauli' or 'pauli'"
         if city_identifier == "pauli":
             self.logger.info("The special case detected: pauli -> FC St. Pauli")
             for club in self.clubs_cache:
-                if "pauli" in club['club_name'].lower():
+                club_name_lower = club['club_name'].lower()
+                if "pauli" in club_name_lower:
                     self.logger.info(f"Found St. Pauli: {club['club_name']}")
                     return club
+            self.logger.warning("St. Pauli not found in cache")
+            return None
         
-        # The normal case: match city identifier to club
-        # Try exact match first (case-insensitive)
+        # SPECIAL CASE 2: "hamburg" -> Hamburger SV (HSV), NOT St. Pauli
+        # Challenge document states: "Hamburg has two football clubs in 1. Bundesliga"
+        # Assumption based on challenge document: "you can assume for Hamburger SV (HSV) that the user will ask for 'Hamburg' or 'hamburg'"
+        # Since "pauli" is for St. Pauli, "hamburg" must be for HSV
+        # After cross checking the results: As of current season (2024/2025), only St. Pauli is in 1. Bundesliga
+        # HSV is in 2. Bundesliga, therefore no answer will be returned for "hamburg" search question
+        if city_identifier == "hamburg":
+            self.logger.info("The special case detected: hamburg -> searching for HSV (NOT St. Pauli)")
+            
+            # Find all Hamburg-related clubs first
+            hamburg_clubs = []
+            for club in self.clubs_cache:
+                club_name_lower = club['club_name'].lower()
+                club_city_lower = club['city'].lower()
+                
+                # Check if club is related to Hamburg (by city or name)
+                if "hamburg" in club_city_lower or "hamburg" in club_name_lower:
+                    hamburg_clubs.append(club)
+                    self.logger.debug(f"Found Hamburg-related club: {club['club_name']} (City: {club['city']})")
+            
+            self.logger.info(f"Total Hamburg clubs found: {len(hamburg_clubs)}")
+            
+            # Now filter out St. Pauli to get HSV
+            for club in hamburg_clubs:
+                club_name_lower = club['club_name'].lower()
+                # HSV should NOT have "pauli" in the name
+                if "pauli" not in club_name_lower:
+                    self.logger.info(f"Found HSV (Hamburg club without 'pauli'): {club['club_name']}")
+                    return club
+            
+            # At this level if nothing is discovered then something is wrong
+            if hamburg_clubs:
+                self.logger.error(f"Only found St. Pauli for Hamburg (expected HSV too). Hamburg clubs: {[c['club_name'] for c in hamburg_clubs]}")
+            else:
+                self.logger.error("No Hamburg clubs found in cache at all")
+            return None
+        
+        # NORMAL CASE: match city identifier to club
+        # This runs for all other cities (not "pauli" and not "hamburg")
         for club in self.clubs_cache:
             club_city_lower = club['city'].lower()
             club_name_lower = club['club_name'].lower()
@@ -131,7 +172,7 @@ class BundesligaCoachRAGChatbot:
                 self.logger.info(f"Found club by name match: {club['club_name']}")
                 return club
         
-        self.logger.warning(f"No club found for identifier: {city_identifier}")
+        self.logger.warning(f"No club found for identifier: '{city_identifier}'")
         return None
     
     def process_query(self, user_question: str) -> str:
@@ -235,7 +276,8 @@ Examples of valid questions:
   - Who is coaching Berlin?
   - What about munich?
   - Who is heidenheims manager?
-  - Who is it for Pauli?"""
+  - Who is it for Pauli? (for FC St. Pauli)
+  - Who is coaching Hamburg? (for HSV)"""
 
 
 def main():
@@ -276,7 +318,8 @@ def main():
     print("  - Who is coaching Berlin?")
     print("  - What about munich?")
     print("  - Who is heidenheims manager?")
-    print("  - Who is it for Pauli?")
+    print("  - Who is it for Pauli? (for FC St. Pauli)")
+    print("  - Who is coaching Hamburg? (for Hamburger SV)")
     print()
     
     # The main interaction steps or loop
